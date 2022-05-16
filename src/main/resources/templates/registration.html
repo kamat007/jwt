@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container mt-4">
+		<div class="row justify-content-center">
+			<div class="col-md-6 col-md-offset-6">
+				<div class="card">
+					<div class="card-body">
+
+						<h3 class="text-muted mb-2">Register-SignUp Form</h3>
+						<hr>
+						<div th:if="${param.success}">
+							<div class="alert alert-info">You have been successfully registered!</div>
+						</div>
+
+						<form th:action="@{/registration}" th:object="${user}"
+							method="post">
+							<!-- Email input -->
+							<div class="form-outline mb-4">
+								<input required placeholder="Email Address" type="email"
+									id="form2Example1" class="form-control" th:field="*{email}"
+									minlength=6 />
+								<!-- <label class="form-label" for="form2Example1">Email address</label> -->
+							</div>
+
+							<!-- Password input -->
+							<div class="form-outline mb-4">
+								<input required placeholder="Password" type="password"
+									id="form2Example2" class="form-control" th:field="*{password}"
+									minlength=8 />
+								<!-- <label class="form-label" for="form2Example2">Password</label> -->
+							</div>
+
+							<!-- First Name Input -->
+							<div class="form-outline mb-4">
+								<input required placeholder="First Name" type="text"
+									id="form2Example3" class="form-control" th:field="*{firstName}"
+									minlength=2 maxlength=20 />
+								<!-- <label class="form-label" for="form2Example2">First Name</label> -->
+							</div>
+
+							<!-- Last Name Input -->
+							<div class="form-outline mb-4">
+								<input required placeholder="Last Name" type="text"
+									id="form2Example4" class="form-control" th:field="*{lastName}"
+									minlength=2 maxlength=20 /> 
+								<!-- <label class="form-label" for="form2Example2">Last Name</label> -->
+							</div>
+
+							<!-- <select class="form-select" aria-label="Default select example"
+								th:field="*{roles}">
+								<option selected>Choose Role</option>
+								<option value="1">Admin</option>
+								<option value="2">Visitor</option>
+							</select>  -->
+							
+ 							<!--   Submit button   -->
+							<div class="col-6 mx-auto">
+								<button type="submit" class="btn btn-primary col-12 mb-4">Register</button>
+							</div>
+
+						</form>
+
+						<!-- Register Button -->
+						<div class="text-center">
+							<p>
+								Already a member? <a th:href="@{/login}">Sign In</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+
+
+
+<!-- <div class="container mt-4">
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-md-offset-6">
+					<div class="card">
+						<div class="card-body">
+						
+							<h3 class="text-muted mb-4">Register-SignUp Form</h3>
+						
+							<form th:action="@{/process_register}" th:object="${user}" method="post">
+								Email input
+								<div class="form-outline mb-4">
+									<input required placeholder="Email Address" type="email" id="form2Example1" class="form-control" th:field="*{email}" minlength=6/>
+									<label class="form-label" for="form2Example1">Email address</label>
+								</div>
+	
+								Password input
+								<div class="form-outline mb-4">
+									<input required placeholder="Password" type="password" id="form2Example2" class="form-control" th:field="*{password}" minlength=8/>
+									<label class="form-label" for="form2Example2">Password</label>
+								</div>
+								
+								Username Input
+								<div class="form-outline mb-4">
+									<input required placeholder="Username" type="text" id="form2Example3" class="form-control" th:field="*{userName}" minlength=2 maxlength=20 />
+									<label class="form-label" for="form2Example2">First Name</label>
+								</div>
+								
+								First Name Input
+								<div class="form-outline mb-4">
+									<input required placeholder="First Name" type="text" id="form2Example3" class="form-control" th:field="*{firstName}" minlength=2 maxlength=20 />
+									<label class="form-label" for="form2Example2">First Name</label>
+								</div>
+								
+								Last Name Input
+								<div class="form-outline mb-4">
+									<input required placeholder="Last Name" type="text" id="form2Example4" class="form-control" th:field="*{lastName}" minlength=2 maxlength=20 />
+									<label class="form-label" for="form2Example2">Last Name</label>
+								</div>
+	
+								<select class="form-select" aria-label="Default select example" th:field="@{role}">
+								 	<option selected>Choose Role</option>
+								 	<option value="1">Admin</option>
+								  	<option value="2">Visitor</option>
+								</select>
+								
+								Submit button
+								<div class="col-6 mx-auto">
+									<button type="submit" class="btn btn-primary col-12 mb-4">Register</button>
+								</div>
+								
+							</form>
+							
+							Register Button
+							<div class="text-center">
+							    <p>Already a member? <a th:href="@{/login}">Sign In</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
